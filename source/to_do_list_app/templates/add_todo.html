@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ru-RU" dir="ltr">
+<head>
+<title>Добавить задачу</title>
+<link rel="stylesheet" href="{% static 'styles/css/base.css' %}">
+<link rel="stylesheet" href="{% static 'styles/css/dark_mode.css' %}">
+<link rel="stylesheet" href="{% static 'styles/css/nav_sidebar.css' %}">
+<script src="{% static '/styles/scripts/js/nav_sidebar.js' %}" defer></script>
+<link rel="stylesheet" href="{% static 'styles/css/forms.css' %}">
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="/static/admin/css/responsive.css">    
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" app-to_do_list_app model-todo change-form"
+  data-admin-utc-offset="21600">
+
+
+<div id="container">    
+    
+    
+    <div id="header">
+        <div id="branding">        
+            <h1 id="site-name">Добавление задач</h1>
+        </div>        
+        <div id="user-tools">            
+                Добро пожаловать            
+        </div>        
+    </div>
+    
+
+    <div class="main" id="main">      
+        <div class="content">
+            <div id="content" class="colM">          
+                <h1>Добавить задачу</h1>          
+                <div id="content-main">
+
+                    <form method="post" id="todo_form">
+                        {% csrf_token %}
+                        <div>
+                            <fieldset class="module aligned ">
+                
+                                <div class="form-row field-title">                        
+                                    <div>
+                                        <label class="required" for="id_title">Заголовок:</label>   
+                                        <input type="text" name="title" class="vTextField" maxlength="200" id="id_title" required>    
+                                    </div>
+                                </div>
+
+                                <div class="form-row field-description">                        
+                                    <div>
+                                        <label class="required" for="id_description">Описание:</label>   
+                                        <input type="text" name="description" class="vTextField" maxlength="200" required id="id_description">    
+                                    </div>            
+                                </div>
+
+                                <div class="form-row field-status">            
+                                    <div>                    
+                                        <label class="required" for="id_status">Статус:</label>
+                                        <select name="status" id="id_status">
+                                            <option value="new" selected>Новая</option>
+                                            <option value="in_progress">В процессе</option>
+                                            <option value="completed">Завершено</option>
+                                        </select>                                       
+                                    </div>            
+                                </div>
+            
+                                <div class="form-row field-date_of_completion">            
+                                    <div>                    
+                                        <label class="required" for="id_date_of_completion">Дата завершения:</label>
+                                        <input type="date" name="date_of_completion" class="vDateField" size="10" id="id_date_of_completion">                    
+                                    </div>            
+                                </div>    
+                            </fieldset>
+
+                            <div class="submit-row">
+                                <input type="submit" value="Сохранить" class="default">
+                            </div>
+                        </div>
+                    </form>
+                </div>          
+                <br class="clear">
+            </div>        
+            <div id="footer"></div>
+        </div>
+    </div>
+    
+</div>
+<!-- END Container -->
+</body>
+</html>
