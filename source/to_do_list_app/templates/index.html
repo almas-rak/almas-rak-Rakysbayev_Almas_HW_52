@@ -1,0 +1,60 @@
+cjplfybt{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи</title>
+    <link rel="stylesheet" href="{% static 'styles/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/dark_mode.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/nav_sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    
+</head>
+<body class="dashboard">
+    <div id="container">
+        <div id="header">
+            
+            <div id="branding">        
+                <h1 id="site-name"><a href="/">Администрирование задач</a></h1>
+            </div>
+            <div id="user-tools">            
+                Добро пожаловать            
+            </div>
+        </div> 
+        <div id="content-main">
+
+            <div class="app-to_do_list_app module">
+                <table class="table-todo">
+                    <caption>
+                    </caption>        
+                    <tr class="model-todo">            
+                        <th scope="row">Задачи</th>           
+                        <td><a href="/todo/add" class="addlink">Добавить</a></td>                                                                                 
+                    </tr>
+                    {% for todo in todos %}
+                    <tr class="model-todo"> 
+                        <th scope="row"><a href="/todo/?pk={{ todo.pk }}">{{ todo.title }}</a> </th>
+                        <td><a href="/todo/?pk={{ todo.pk }}" class="changelink">Изменить</a></td>
+                    </tr>
+                        {% endfor %}
+                     
+                </table>
+            </div>
+        </div>
+            
+    </div>
+            
+        
+
+        
+
+
+
+    
+</body>
+</html>
