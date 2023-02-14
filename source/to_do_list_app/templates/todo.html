@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи</title>
+    <link rel="stylesheet" href="{% static 'styles/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/dark_mode.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/nav_sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    
+</head>
+<body class="dashboard">
+    <div id="container">
+        <div id="header">            
+            <div id="branding">        
+                <h1 id="site-name"><a href="/">Администрирование задач</a></h1>
+            </div>
+            <div id="user-tools">            
+                Добро пожаловать            
+            </div>
+        </div> 
+
+        <div class="breadcrumbs">            
+        </div>
+                            
+            
+                <div class="main" id="main">
+                  
+                    
+                      
+            
+            
+            
+                                      
+                  <div class="content">
+                    
+                      
+                    
+                    <!-- Content -->
+                    <div id="content" class="colM">
+                      
+                    
+                    <div id="content-main">
+                   
+              <fieldset class="module aligned ">                            
+                <div class="form-row field-description">
+
+                    <table>
+                        <caption>
+                        </caption>        
+                        <tr class="model-todo">            
+                            <th scope="row">Заголовок</th>           
+                            <td>{{ todo.title }}</td>                                                                                 
+                        </tr>
+                        <tr class="model-todo">            
+                            <th scope="row">Описание</th>           
+                            <td>{{ todo.description }}</td>                                                                                 
+                        </tr>
+                        <tr class="model-todo">            
+                            <th scope="row">Статус</th>           
+                            <td>{{ todo.status }}</td>                                                                                 
+                        </tr>
+                        <tr class="model-todo">            
+                            <th scope="row">Дата завершения</th>           
+                            <td>{{ todo.date_of_completion }}</td>                                                                                 
+                        </tr>
+                        <th scope="row"><a href="/" aria-current="page">На главную</a></th>                        
+                    </table>
+                    
+                      <br class="clear">
+                    </div>
+                    <!-- END Content -->
+                    <div id="footer"></div>
+                  </div>
+                </div>
+                  
+                    
+                      
+
+            
+                    
+                  
